@@ -1,5 +1,6 @@
 from sqlalchemy.orm import Session
 from datetime import date, timedelta
+from typing import Optional
 from app import models, schemas
 
 def create_contact(db: Session, contact_in: schemas.ContactCreate):
