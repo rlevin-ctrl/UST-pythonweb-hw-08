@@ -26,3 +26,23 @@ class ContactResponse(ContactBase):
 
     class Config:
         orm_mode = True
+
+class UserBase(BaseModel):
+    email: EmailStr
+
+
+class UserCreate(UserBase):
+    password: str
+
+
+class UserResponse(UserBase):
+    id: int
+    is_verified: bool
+    avatar: Optional[str] = None
+
+    class Config:
+        orm_mode = True
+
+class TokenResponse(BaseModel):
+    access_token: str
+    token_type: str = "bearer"
